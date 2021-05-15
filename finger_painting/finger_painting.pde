@@ -32,10 +32,11 @@ void setup() {
   fill(255, 255, 255);
   rect(50, 0, 905, 655);
   
+  //fingerprint
   img = loadImage("fingerprint.png");
   img.resize(40, 55);
 
-  //creating the color palette to the right of the 
+  //creating the color palette to the left of the canvas
   fill(paint1);
   ellipse(25, 25, 40, 40);
   
@@ -108,6 +109,7 @@ void draw() {
         tint(paint13);
       }
     }
+    
     //paint fingerprint
     else {
       image(img, mouseX, mouseY);
@@ -121,6 +123,7 @@ void keyPressed(){
     fill(255, 255, 255);
     rect(50, 0, 905, 720);
   }
+  
   //if user presses the s button, save painting
   if (key == 's'|| key == 'S'){
     PImage art  = get(50, 0, 905, 655);
