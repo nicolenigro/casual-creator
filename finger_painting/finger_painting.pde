@@ -76,9 +76,8 @@ void setup() {
   ellipse(25, 625, 40, 40);
 }
 
-void draw() {
-  if(mousePressed) {
-    //paint color selection
+void mousePressed(){
+  //paint color selection
     if(mouseX < 50){
       if(mouseY > 5 && mouseY < 45){
         tint(paint1);
@@ -112,7 +111,9 @@ void draw() {
     else {
       image(img, mouseX, mouseY);
     }
-  }
+}
+
+void draw() {
 }
 
 void keyPressed(){  
@@ -123,7 +124,7 @@ void keyPressed(){
   }
   //if user presses the s button, save painting
   if (key == 's'|| key == 'S'){
-    PImage art  = get(50, 0, 905, 720);
+    PImage art  = get(50, 0, 905, 655);
     art.save("myFingerPainting.jpg");
   }
 }
