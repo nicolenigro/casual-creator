@@ -33,7 +33,9 @@ void setup() {
   rect(50, 0, 905, 655);
   
   //fingerprint
-  img = loadImage("fingerprint.png");
+  String url = "https://www.pngkey.com/png/full/440-4407829_fingerprint-transparent-fingerprint-white.png";
+  //img = loadImage("fingerprint.png");
+  img = loadImage(url, "png");
   img.resize(40, 55);
 
   //creating the color palette to the left of the canvas
