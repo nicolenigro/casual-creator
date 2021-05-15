@@ -80,6 +80,7 @@ void draw() {
     //paint color selection
     if(mouseX < 50){
       if(mouseY > 5 && mouseY < 45){
+        //load image for each color selection so previous color doesn't affect tint
         img = loadImage("fingerprint.png");
         tint(paint1);
       } else if (mouseY > 55 && mouseY < 95){
