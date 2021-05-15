@@ -76,8 +76,9 @@ void setup() {
   ellipse(25, 625, 40, 40);
 }
 
-void mousePressed(){
-  //paint color selection
+void draw() {
+  if(mousePressed) {
+    //paint color selection
     if(mouseX < 50){
       if(mouseY > 5 && mouseY < 45){
         tint(paint1);
@@ -111,9 +112,7 @@ void mousePressed(){
     else {
       image(img, mouseX, mouseY);
     }
-}
-
-void draw() {
+  }
 }
 
 void keyPressed(){  
