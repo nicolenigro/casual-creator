@@ -5,8 +5,6 @@ M9: Another Kind of CC
 5/15/21
 */
 
-/* @pjs preload="fingerprint.png"; */
-
 PImage img;
 
 color paint1 = color(255, 51, 51); //red
