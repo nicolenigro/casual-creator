@@ -21,6 +21,8 @@ color paint11 = color(255, 51, 255); //pink1
 color paint12 = color(255, 51, 153); //pink2
 color paint13 = color(0, 0, 0); //black
 
+boolean paused = false;
+
 void setup() {
   //light gray background
   size(960, 655);
@@ -81,6 +83,7 @@ void draw() {
     if(mouseX < 50){
       //load image for each color selection so previous color doesn't affect tint
       img = loadImage("fingerprint.png");
+      
       if(mouseY > 5 && mouseY < 45){
         tint(paint1);
       } else if (mouseY > 55 && mouseY < 95){
@@ -125,10 +128,13 @@ void keyPressed(){
     rect(50, 0, 905, 720);
   }
   
-  //if user presses the s button, save painting
-  if (key == 's'|| key == 'S'){
-    PImage art  = get(50, 0, 905, 655);
-    String home = System.getProperty("user.home");
-    art.save(home + "/Downloads/myFingerPainting.jpg");
+  //if user presses the p button, pause; if they press p again, unpause
+  if (key == 'p'|| key == 'P'){
+    paused = !paused;
+    if (paused){
+      noLoop();
+    } else {
+      loop();
+    }
   }
 }
