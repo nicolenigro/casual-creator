@@ -79,51 +79,39 @@ void draw() {
   if(mousePressed) {
     //paint color selection
     if(mouseX < 50){
+      //load image for each color selection so previous color doesn't affect tint
+      img = loadImage("fingerprint.png");
       if(mouseY > 5 && mouseY < 45){
-        //load image for each color selection so previous color doesn't affect tint
-        img = loadImage("fingerprint.png");
         tint(paint1);
       } else if (mouseY > 55 && mouseY < 95){
-        img = loadImage("fingerprint.png");
         tint(paint2);
       } else if (mouseY > 105 && mouseY < 145){
-        img = loadImage("fingerprint.png");
         tint(paint3);
       } else if (mouseY > 155 && mouseY < 195){
-        img = loadImage("fingerprint.png");
         tint(paint4);
       } else if (mouseY > 205 && mouseY < 245){
-        img = loadImage("fingerprint.png");
         tint(paint5);
       } else if (mouseY > 255 && mouseY < 295){
-        img = loadImage("fingerprint.png");
         tint(paint6);
       } else if (mouseY > 305 && mouseY < 345){
-        img = loadImage("fingerprint.png");
         tint(paint7);
       } else if (mouseY > 355 && mouseY < 395){
-        img = loadImage("fingerprint.png");
         tint(paint8);
       } else if (mouseY > 405 && mouseY < 445){
-        img = loadImage("fingerprint.png");
         tint(paint9);
       } else if (mouseY > 455 && mouseY < 495){
-        img = loadImage("fingerprint.png");
         tint(paint10);
       } else if (mouseY > 505 && mouseY < 545){
-        img = loadImage("fingerprint.png");
         tint(paint11);
       } else if (mouseY > 555 && mouseY < 595){
-        img = loadImage("fingerprint.png");
         tint(paint12);
       } else if (mouseY > 605 && mouseY < 645){
-        img = loadImage("fingerprint.png");
         tint(paint13);
       }
     }
     
     //paint fingerprint
-    else {
+    if (mouseX > 50 && mouseX < 915) {
       img.resize(40, 55);
       image(img, mouseX, mouseY);
     }
@@ -140,6 +128,7 @@ void keyPressed(){
   //if user presses the s button, save painting
   if (key == 's'|| key == 'S'){
     PImage art  = get(50, 0, 905, 655);
-    art.save("myFingerPainting.jpg");
+    String home = System.getProperty("user.home");
+    art.save(home + "/Downloads/myFingerPainting.jpg");
   }
 }
