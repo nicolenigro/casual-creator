@@ -5,7 +5,8 @@ M9: Another Kind of CC
 5/15/21
 */
 
-PImage img;
+PImage fingerprint;
+PImage rainbowWheel;
 
 color paint1 = color(255, 51, 51); //red
 color paint2 = color(255, 153, 51); //orange
@@ -22,19 +23,20 @@ color paint12 = color(255, 51, 153); //pink2
 color paint13 = color(0, 0, 0); //black
 
 boolean paused = false;
+boolean rainbowMode = false;
 
 void setup() {
   //light gray background
-  size(960, 655);
+  size(960, 700);
   background(211, 211, 211);
   
   //white canvas for painting
   fill(255, 255, 255);
-  rect(50, 0, 905, 655);
+  rect(50, 0, 905, 700);
   
   //fingerprint
-  img = loadImage("fingerprint.png");
-  img.resize(40, 55);
+  fingerprint = loadImage("fingerprint.png");
+  fingerprint.resize(40, 55);
 
   //creating the color palette to the left of the canvas
   fill(paint1);
@@ -75,14 +77,21 @@ void setup() {
   
   fill(paint13);
   ellipse(25, 625, 40, 40);
+
+  rainbowWheel = loadImage("rainbow-wheel.png");
+  rainbowWheel.resize(40, 40);
+  image(rainbowWheel, 5, 655);
 }
 
 void draw() {
   if(mousePressed) {
     //paint color selection
     if(mouseX < 50){
+      //turn rainbowMode off because another color is being selected
+      rainbowMode = false;
+      
       //load image for each color selection so previous color doesn't affect tint
-      img = loadImage("fingerprint.png");
+      fingerprint = loadImage("fingerprint.png");
       
       if(mouseY > 5 && mouseY < 45){
         tint(paint1);
@@ -110,13 +119,23 @@ void draw() {
         tint(paint12);
       } else if (mouseY > 605 && mouseY < 645){
         tint(paint13);
+      } else if (mouseY > 655 && mouseY < 695){
+        rainbowMode = true;
       }
     }
     
     //paint fingerprint
     if (mouseX > 50 && mouseX < 915) {
-      img.resize(40, 55);
-      image(img, mouseX, mouseY);
+      //randomly select a RGB color value to paint for each fingerprint
+      if (rainbowMode == true){
+        float red = random(0, 255);
+        float green = random(0, 255);
+        float blue = random(0, 255);
+        color nextColor = color(red, green, blue);
+        tint(nextColor);
+      }
+      fingerprint.resize(40, 55);
+      image(fingerprint, mouseX, mouseY);
     }
   }
 }
@@ -125,7 +144,7 @@ void keyPressed(){
   //if users presses the c button, clear painting
   if (key == 'c' || key == 'C'){
     fill(255, 255, 255);
-    rect(50, 0, 905, 720);
+    rect(50, 0, 905, 700);
   }
   
   //if user presses the p button, pause; if they press p again, unpause
