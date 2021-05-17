@@ -1,9 +1,10 @@
 # Fingerpaint Fun!
 
 ## Overview
-https://nicolenigro.github.io/casual-creator/
+To access the casual creator, click on the link to the website: [Fingerpaint Fun!](https://nicolenigro.github.io/casual-creator/).
 
 ### What are your users casually creating?
+My users are casually creating fingerprint art. Fingerprint painting was a craft I loved to do when I was younger. However, fingerprint painting requires physical materials like paint and paper and can also get messy. My casual creator encourages users to embrace their inner child and create fingerprint art in an easy and accessible way.
 
 ### How do you keep them engaged and excited to create?
 
