@@ -147,7 +147,7 @@ void draw() {
       if (rainbowMode == true){
         fill(paint13);
         textSize(48);
-        text("help", 300, 300);
+        text("help", 300, 300); //getting to here but drawing not working on site
         fingerprint = loadImage("fingerprint.png");
         float red = random(0, 255);
         float green = random(0, 255);
