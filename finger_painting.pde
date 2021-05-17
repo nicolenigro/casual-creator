@@ -145,6 +145,9 @@ void draw() {
     if (mouseX > 50 && mouseX < 915) {
       //randomly select a RGB color value to paint for each fingerprint
       if (rainbowMode == true){
+        fill(paint13);
+        textSize(48);
+        text("help", 300, 300);
         fingerprint = loadImage("fingerprint.png");
         float red = random(0, 255);
         float green = random(0, 255);
