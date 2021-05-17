@@ -78,19 +78,15 @@ void setup() {
   ellipse(25, 625, 40, 40);
   
   //rainbowMode "paint" is a circle of different colored concentric circles
-  colorMode(HSB, 360, 100, 100);
   noStroke();
   ellipseMode(RADIUS);
-  drawGradient(25, 675);
-}
-
-void drawGradient(float x, float y) {
   int radius = 20;
-  float h = random(0, 360);
   for (int r = radius; r > 0; --r) {
-    fill(h, 90, 90);
-    ellipse(x, y, r, r);
-    h = random(0, 360);
+    float c1 = random(0, 255);
+    float c2 = random(0, 255);
+    float c3 = random(0, 255);
+    fill(c1, c2, c3);
+    ellipse(25, 675, r, r);
   }
 }
 
@@ -156,7 +152,7 @@ void keyPressed(){
   //if users presses the c button, clear painting
   if (key == 'c' || key == 'C'){
     fill(255, 255, 255);
-    rect(50, 0, 905, 700);
+    rect(51, 0, 905, 700);
   }
   
   //if user presses the p button, pause; if they press p again, unpause
