@@ -16,4 +16,5 @@ I have experience with web development from when I took Human-Computer Interacti
 
 ## Sources
 * https://cs.nyu.edu/~kapp/cs101/processing_on_the_web/
+* https://processing.org/examples/radialgradient.html
 * https://stackoverflow.com/questions/45202108/how-to-pause-play-a-sketch-in-processing-with-the-same-button
