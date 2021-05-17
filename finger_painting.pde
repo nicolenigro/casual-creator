@@ -94,37 +94,47 @@ void draw() {
   if(mousePressed) {
     //paint color selection
     if(mouseX < 50){
-      //turn rainbowMode off because another color is being selected
-      rainbowMode = false;
-      
       //load image for each color selection so previous color doesn't affect tint
       fingerprint = loadImage("fingerprint.png");
       
       if(mouseY > 5 && mouseY < 45){
+        rainbowMode = false; //turn rainbowMode off because another color is being selected
         tint(paint1);
       } else if (mouseY > 55 && mouseY < 95){
+        rainbowMode = false;
         tint(paint2);
       } else if (mouseY > 105 && mouseY < 145){
+        rainbowMode = false;
         tint(paint3);
       } else if (mouseY > 155 && mouseY < 195){
+        rainbowMode = false;
         tint(paint4);
       } else if (mouseY > 205 && mouseY < 245){
+        rainbowMode = false;
         tint(paint5);
       } else if (mouseY > 255 && mouseY < 295){
+        rainbowMode = false;
         tint(paint6);
       } else if (mouseY > 305 && mouseY < 345){
+        rainbowMode = false;
         tint(paint7);
       } else if (mouseY > 355 && mouseY < 395){
+        rainbowMode = false;
         tint(paint8);
       } else if (mouseY > 405 && mouseY < 445){
+        rainbowMode = false;
         tint(paint9);
       } else if (mouseY > 455 && mouseY < 495){
+        rainbowMode = false;
         tint(paint10);
       } else if (mouseY > 505 && mouseY < 545){
+        rainbowMode = false;
         tint(paint11);
       } else if (mouseY > 555 && mouseY < 595){
+        rainbowMode = false;
         tint(paint12);
       } else if (mouseY > 605 && mouseY < 645){
+        rainbowMode = false;
         tint(paint13);
       } else if (mouseY > 655 && mouseY < 695){
         rainbowMode = true;
@@ -141,12 +151,9 @@ void draw() {
         float blue = random(0, 255);
         color nextColor = color(red, green, blue);
         tint(nextColor);
-        fingerprint.resize(40, 55);
-        image(fingerprint, mouseX, mouseY);
-      } else {
-        fingerprint.resize(40, 55);
-        image(fingerprint, mouseX, mouseY);
       }
+      fingerprint.resize(40, 55);
+      image(fingerprint, mouseX, mouseY);
     }
   }
 }
