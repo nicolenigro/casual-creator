@@ -2,11 +2,10 @@
 Nicole Nigro
 CSCI 3725
 M9: Another Kind of CC
-5/15/21
+5/16/21
 */
 
 PImage fingerprint;
-PImage rainbowWheel;
 
 color paint1 = color(255, 51, 51); //red
 color paint2 = color(255, 153, 51); //orange
@@ -77,10 +76,22 @@ void setup() {
   
   fill(paint13);
   ellipse(25, 625, 40, 40);
+  
+  //rainbowMode "paint" is a circle of different colored concentric circles
+  colorMode(HSB, 360, 100, 100);
+  noStroke();
+  ellipseMode(RADIUS);
+  drawGradient(25, 675);
+}
 
-  rainbowWheel = loadImage("rainbow-wheel.png");
-  rainbowWheel.resize(40, 40);
-  image(rainbowWheel, 5, 655);
+void drawGradient(float x, float y) {
+  int radius = 20;
+  float h = random(0, 360);
+  for (int r = radius; r > 0; --r) {
+    fill(h, 90, 90);
+    ellipse(x, y, r, r);
+    h = random(0, 360);
+  }
 }
 
 void draw() {
