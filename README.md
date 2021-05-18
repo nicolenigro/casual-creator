@@ -28,3 +28,5 @@ I pushed myself outside of my comfort zone by embedding my Processing sketch wit
 * https://processing.org/examples/radialgradient.html
 * https://stackoverflow.com/questions/45202108/how-to-pause-play-a-sketch-in-processing-with-the-same-button
 * https://en.wikipedia.org/wiki/Flow_(psychology)
+* https://www.pinterest.com/pin/669417932098423069/
+* https://www.pngkey.com/maxpic/u2e6y3i1u2r5y3q8/
