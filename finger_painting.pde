@@ -2,8 +2,9 @@
 Nicole Nigro
 CSCI 3725
 M9: Another Kind of CC
-5/16/21
+5/17/21
 */
+
 
 PImage fingerprint;
 
@@ -24,6 +25,10 @@ color paint13 = color(0, 0, 0); //black
 boolean paused = false;
 boolean rainbowMode = false;
 
+
+/*
+setup(): initializes general information about the finger_painting program
+*/
 void setup() {
   //light gray background
   size(960, 700);
@@ -90,16 +95,24 @@ void setup() {
   }
 }
 
+
+/*
+draw(): the code inside this function runs continuously from top to bottom until
+the program is stopped.
+*/
 void draw() {
   if(mousePressed) {
+    
     //paint color selection
     if(mouseX < 50){
+      
       //load image for each color selection so previous color doesn't affect tint
       fingerprint = loadImage("fingerprint.png");
       
       if(mouseY > 5 && mouseY < 45){
-        rainbowMode = false; //turn rainbowMode off because another color is being selected
-        tint(paint1);
+        //turn rainbowMode off because another color is being selected
+        rainbowMode = false;
+        tint(paint1); //tint the fingerprint to the selected paint
       } else if (mouseY > 55 && mouseY < 95){
         rainbowMode = false;
         tint(paint2);
@@ -137,18 +150,12 @@ void draw() {
         rainbowMode = false;
         tint(paint13);
       } else if (mouseY > 655 && mouseY < 695){
-        //randomly select a RGB color value to paint for each fingerprint
         rainbowMode = true;
-        float red = random(0, 255);
-        float green = random(0, 255);
-        float blue = random(0, 255);
-        color nextColor = color(red, green, blue);
-        tint(nextColor);
       }
     }
     
-    //paint fingerprint
     if (mouseX > 50 && mouseX < 915) {
+      
       //randomly select a RGB color value to paint for each fingerprint
       if (rainbowMode == true){
         float red = random(0, 255);
@@ -157,12 +164,18 @@ void draw() {
         color nextColor = color(red, green, blue);
         tint(nextColor);
       }
+      
+      //paint fingerprint
       fingerprint.resize(40, 55);
       image(fingerprint, mouseX, mouseY);
     }
   }
 }
 
+
+/*
+keyPressed(): this function is called every time a key is pressed
+*/
 void keyPressed(){  
   //if users presses the c button, clear painting
   if (key == 'c' || key == 'C'){
