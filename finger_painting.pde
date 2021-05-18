@@ -154,9 +154,15 @@ void draw() {
         float blue = random(0, 255);
         color nextColor = color(red, green, blue);
         tint(nextColor);
+        fingerprint.resize(40, 55);
+        image(fingerprint, mouseX, mouseY);
+        fill(paint13);
+        textSize(48);
+        text("test", 500, 500); 
+      } else {
+        fingerprint.resize(40, 55);
+        image(fingerprint, mouseX, mouseY);
       }
-      fingerprint.resize(40, 55);
-      image(fingerprint, mouseX, mouseY);
     }
   }
 }
