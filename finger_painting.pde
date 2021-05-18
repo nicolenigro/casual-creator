@@ -23,7 +23,7 @@ color paint12 = color(255, 51, 153); //pink2
 color paint13 = color(0, 0, 0); //black
 
 boolean paused = false;
-boolean rainbowMode = false;
+boolean multiColorMode = false;
 
 
 /*
@@ -82,7 +82,7 @@ void setup() {
   fill(paint13);
   ellipse(25, 625, 40, 40);
   
-  //rainbowMode "paint" is a circle of different colored concentric circles
+  //multiColorMode "paint" is a circle of different colored concentric circles
   noStroke();
   ellipseMode(RADIUS);
   int radius = 20;
@@ -110,54 +110,55 @@ void draw() {
       fingerprint = loadImage("fingerprint.png");
       
       if(mouseY > 5 && mouseY < 45){
-        //turn rainbowMode off because another color is being selected
-        rainbowMode = false;
+        //turn multiColorMode off because another color is being selected
+        multiColorMode = false;
         tint(paint1); //tint the fingerprint to the selected paint
       } else if (mouseY > 55 && mouseY < 95){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint2);
       } else if (mouseY > 105 && mouseY < 145){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint3);
       } else if (mouseY > 155 && mouseY < 195){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint4);
       } else if (mouseY > 205 && mouseY < 245){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint5);
       } else if (mouseY > 255 && mouseY < 295){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint6);
       } else if (mouseY > 305 && mouseY < 345){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint7);
       } else if (mouseY > 355 && mouseY < 395){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint8);
       } else if (mouseY > 405 && mouseY < 445){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint9);
       } else if (mouseY > 455 && mouseY < 495){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint10);
       } else if (mouseY > 505 && mouseY < 545){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint11);
       } else if (mouseY > 555 && mouseY < 595){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint12);
       } else if (mouseY > 605 && mouseY < 645){
-        rainbowMode = false;
+        multiColorMode = false;
         tint(paint13);
       } else if (mouseY > 655 && mouseY < 695){
-        rainbowMode = true;
+        multiColorMode = true;
       }
     }
     
+    //clicked on canvas area
     if (mouseX > 50 && mouseX < 915) {
       
       //randomly select a RGB color value to paint for each fingerprint
-      if (rainbowMode == true){
+      if (multiColorMode == true){
         float red = random(0, 255);
         float green = random(0, 255);
         float blue = random(0, 255);
