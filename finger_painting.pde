@@ -138,6 +138,11 @@ void draw() {
         tint(paint13);
       } else if (mouseY > 655 && mouseY < 695){
         rainbowMode = true;
+        float red = random(0, 255);
+        float green = random(0, 255);
+        float blue = random(0, 255);
+        color nextColor = color(red, green, blue);
+        tint(nextColor);
       }
     }
     
@@ -145,24 +150,15 @@ void draw() {
     if (mouseX > 50 && mouseX < 915) {
       //randomly select a RGB color value to paint for each fingerprint
       if (rainbowMode == true){
-        fill(paint13);
-        textSize(48);
-        text("help", 300, 300); //getting to here but drawing not working on site
         fingerprint = loadImage("fingerprint.png");
         float red = random(0, 255);
         float green = random(0, 255);
         float blue = random(0, 255);
         color nextColor = color(red, green, blue);
         tint(nextColor);
-        fingerprint.resize(40, 55);
-        image(fingerprint, mouseX, mouseY);
-        fill(paint13);
-        textSize(48);
-        text("test", 500, 500); 
-      } else {
-        fingerprint.resize(40, 55);
-        image(fingerprint, mouseX, mouseY);
       }
+      fingerprint.resize(40, 55);
+      image(fingerprint, mouseX, mouseY);
     }
   }
 }
