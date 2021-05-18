@@ -1,8 +1,7 @@
 # Fingerpaint Flow
-
-## Overview
 Fingerpaint Flow is a casual creator where users can create their own fingerpaint art. To access this casual creator, click on the link to the website: [Fingerpaint Flow](https://nicolenigro.github.io/casual-creator/).
 
+## Overview
 ### What are your users casually creating?
 My users are casually creating fingerprint art. Fingerprint painting was a craft I loved to do when I was younger. However, fingerprint painting requires physical materials like paint and paper and can also get messy. My casual creator encourages users to embrace their inner child and create fingerprint art in an easy and accessible way.
 
