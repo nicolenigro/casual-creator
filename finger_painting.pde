@@ -137,6 +137,7 @@ void draw() {
         rainbowMode = false;
         tint(paint13);
       } else if (mouseY > 655 && mouseY < 695){
+        //randomly select a RGB color value to paint for each fingerprint
         rainbowMode = true;
         float red = random(0, 255);
         float green = random(0, 255);
@@ -150,7 +151,6 @@ void draw() {
     if (mouseX > 50 && mouseX < 915) {
       //randomly select a RGB color value to paint for each fingerprint
       if (rainbowMode == true){
-        fingerprint = loadImage("fingerprint.png");
         float red = random(0, 255);
         float green = random(0, 255);
         float blue = random(0, 255);
