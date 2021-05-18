@@ -6,6 +6,7 @@ Fingerpaint Flow is a casual creator where users can create their own fingerpain
 My users are casually creating fingerprint art. Fingerprint painting was a craft I loved to do when I was younger. However, fingerprint painting requires physical materials like paint and paper and can also get messy. My casual creator encourages users to embrace their inner child and create fingerprint art in an easy and accessible way.
 
 ### How do you keep them engaged and excited to create?
+My system keeps users engaged and excited to create by establishing a flow state as they create, hence the name Fingerpaint Flow. One of the components of flow is [“immediate feedback”]( https://en.wikipedia.org/wiki/Flow_(psychology)), which I incorporated by having my system immediately respond to users; when a user clicks on the canvas, a fingerprint shows up immediately. Another component of flow is [“a sense of personal control or agency over the situation or activity”](https://en.wikipedia.org/wiki/Flow_(psychology)); since the fingerprint is painted wherever the user clicks on the canvas, my hope is that they experience personal control over their painting. Also, the clear key and pause key grant users the control to take a break or start over, as they see fit. The final component of flow I incorporated in my system is [“feeling the potential to succeed”](https://en.wikipedia.org/wiki/Flow_(psychology)). Fingerpainting is an art that is less concerned with form/technique and more so focused on personal fulfillment; by the nature of this approach, I hope all users feel like they can succeed in creating art they’re proud of.
 
 ### How do you help them make something they are proud to share?
 
@@ -21,3 +22,4 @@ I pushed myself outside of my comfort zone by embedding my Processing sketch wit
 * https://cs.nyu.edu/~kapp/cs101/processing_on_the_web/
 * https://processing.org/examples/radialgradient.html
 * https://stackoverflow.com/questions/45202108/how-to-pause-play-a-sketch-in-processing-with-the-same-button
+* https://en.wikipedia.org/wiki/Flow_(psychology)
